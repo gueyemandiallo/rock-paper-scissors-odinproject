@@ -1,0 +1,122 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h1>Rock Paper Scissors</h1>
+</body>
+
+</html>
+
+//script file content
+
+// Rock Paper Scissors Script File - ODIN Project
+
+//setting randomly cpu choice
+function cpuPlayer() {
+    const plays = ["rock", "paper", "scissors"]
+    rand = Math.floor(Math.random() * 3) + 1
+
+    return plays[rand - 1]
+}
+
+//single roud play
+function singleRound(playerSelection, cpuSelection) {
+    cpuSelection = cpuPlayer()
+    playerSelection = prompt("Enter your choice please! Rock, paper or scissors.").toLowerCase()
+
+    switch (cpuSelection) {
+        case "scissors":
+            if (playerSelection === "rock") {
+                console.log("You Win! Rock crushes Scissors.")
+                return 'player'
+            } else if (playerSelection === "paper") {
+                console.log("You Lose! Scissors cuts Paper.")
+                return 'comp'
+            } else if (playerSelection === "scissors") {
+                console.log("It's a TIE!")
+                return null
+            }
+            break;
+        case "paper":
+            if (playerSelection === "rock") {
+                console.log("You Lose! Paper beats Rock.")
+                return 'comp'
+            } else if (playerSelection === "scissors") {
+                console.log("You Win! Scissors cuts Paper.")
+                return 'player'
+            } else if (playerSelection === "paper") {
+                console.log("It's a TIE!")
+                return null
+
+            }
+            break;
+        case "rock":
+            if (playerSelection === "rock") {
+                console.log("It's a TIE!")
+                return null
+            } else if (playerSelection === "paper") {
+                console.log("You Win! Paper beats Rock.")
+                return 'player'
+            } else if (playerSelection === "scissors") {
+                console.log("You Lose! Rock crushes Scissors.")
+                return 'comp'
+
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+
+//5 rounds play
+function game() {
+    let playerScore = 0
+    let cpuScore = 0
+    let ties = 0
+    let winner = ''
+
+    const rounds = 5
+
+    for (let index = 0; index < rounds; index++) {
+        winner = singleRound()
+        switch (winner) {
+            case "player":
+                playerScore++
+                break;
+            case "comp":
+                cpuScore++
+                break;
+            case null:
+                ties++
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    console.log("player:" + playerScore)
+
+    console.log("cpu:" + cpuScore)
+
+    //declaring the winner
+    if (playerScore === cpuScore)
+        console.log("\n\n\nNOBODY wins it's a huge TIE !")
+    else if (playerScore > cpuScore)
+        console.log("\n\n\nYOU HAVE WON THE GAME :D")
+    else
+        console.log("\n\n\ncpu WON THE GAME :/")
+
+
+}
+
+game()

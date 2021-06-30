@@ -6,11 +6,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- google font: big shoulders stencil text link  -->
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@300&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <h1>Rock Paper Scissors</h1>
+
+    <!-- header -->
+    <div class="header">
+        <h1 class="title">Rock Paper Scissors</h1>
+    </div>
+
+    <!-- results area  -->
+    <div class="result">
+        <p class="result-container">
+            <!-- single round result area, where js appends who wins or lose  -->
+        </p>
+    </div>
+
+    <!-- game container  -->
+    
+    <div class="game-container">
+        <img id="naruto" src="/images/naruto.jpg" alt="naruto character image">
+        <img id="sasuke" src="/images/sasuke.jpg" alt="sasuke character image">
+
+        <!-- player selection side  -->
+        <div class="player-side">
+            <!-- player title  -->
+            <h1 class="player-title">Player : </h1>
+            <!-- player score  -->
+            <div class="player-score">
+                <p id="player-score">0</p>
+            </div>
+            <!-- player buttons -->
+            <div class="player-btn-container">
+                <button class="player-selection" id="playerRock" value="rock"><img src="images/rockhand.PNG" alt="rock hand image"
+                        id="img-selection"></button>
+                <button class="player-selection" id="playerPaper" value="paper"><img src="images/paperhand.PNG" alt="paper hand image"
+                        id="img-selection"></button>
+                <button class="player-selection" id="playerScissors" value="scissors"><img src="images/scissorshand.PNG"
+                        alt="scissors hand image" id="img-selection"></button>
+            </div>
+        </div>
+
+        <!-- versus img  -->
+        <div class="versus-place">
+            <img class="versus-image" src="/images/versus.png" alt="versus img">
+        </div>
+
+        <!-- cpu selection side  -->
+        <div class="cpu-side">
+            <!-- cpu title  -->
+            <h1 class="cpu-title">CPU : </h1>
+            <!-- cpu score -->
+            <div class="cpu-score">
+                <p id="cpu-score">0</p>
+            </div>
+            <!-- cpu buttons -->
+            <div class="cpu-btn-container">
+                <button class="cpu-selection" id="cpuRock" value="rock"><img src="images/rockhand.PNG" id="img-selection"
+                        alt="rock hand image"></button>
+                <button class="cpu-selection" id="cpuPaper" value="paper"><img src="images/paperhand.PNG" id="img-selection"
+                        alt="paper hand image"></button>
+                <button class="cpu-selection" id="cpuScissors" value="scissors"><img src="images/scissorshand.PNG" id="img-selection"
+                        alt="scissors hand image"></button>
+            </div>
+        </div>
+
+        <!-- replay button  -->
+        <div class="resetDiv">
+            <button class="button button5" id="resetBtn">Replay</button>
+        </div>
+    </div>
+
+    <!-- game container end -->
+
+<br><br><br><br><br>
+
+<!-- audios  -->
+<audio src="/audios/click.mp3" id="clickSound"></audio>
+<audio src="/audios/win.mp3" id="winSound"></audio>
+<audio src="/audios/lose.mp3" id="loseSound"></audio>
+
+
 </body>
 
 </html>
+
+<script src="script.js"></script>
